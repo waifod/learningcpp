@@ -25,8 +25,6 @@ class String {
     const std::string& s_{staticGetString()};
 };
 
-// We disable optimizations because otherwise the compiler will simply delete the loops.
-#pragma optimize("[optimization-list]", on)
 int main() {
   auto start = std::chrono::steady_clock::now();
   for (size_t i{0}; i<ITERATIONS; ++i) {
@@ -49,4 +47,3 @@ int main() {
 
   return EXIT_SUCCESS;
 }
-#pragma optimize("[optimization-list]", off)
