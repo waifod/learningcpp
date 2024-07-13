@@ -5,11 +5,6 @@ struct GCD {
   static constexpr int value{GCD<n, m%n>::value};
 };
 
-template<int n>
-struct GCD<0, n> {
-  static constexpr int value{n};
-};
-
 template<int m>
 struct GCD<m, 0> {
   static constexpr int value{m};
