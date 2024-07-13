@@ -17,7 +17,7 @@ class String {
       return s;
     }
 
-    const std::string& getString() {
+    const std::string& getString() const {
       return s_;
     }
 
