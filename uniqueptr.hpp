@@ -22,6 +22,13 @@ class UniquePtr {
     UniquePtr(const UniquePtr &) = delete;
     UniquePtr& operator=(const UniquePtr &) = delete;
 
+    UniquePtr(T* && ptr = nullptr) noexcept : ptr_{ptr} {}
+
+    UniquePtr& operator=(T* && ptr) noexcept {
+      reset(ptr);
+      return this;
+    }
+    
     template<typename U>
     UniquePtr(UniquePtr<U> && other) noexcept {
       reset(other.release());
@@ -32,14 +39,7 @@ class UniquePtr {
       reset(other.release());
       return this;
     }
-    
-    UniquePtr(T* && ptr) noexcept : ptr_{ptr} {}
 
-    UniquePtr& operator=(T* && ptr) noexcept {
-      reset(ptr);
-      return this;
-    }
-    
     ~UniquePtr() noexcept {
       reset();
     }
