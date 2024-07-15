@@ -5,6 +5,12 @@ class UniquePtr {
   private:
     T* ptr_;
 
+  public:
+    UniquePtr(const UniquePtr &) = delete;
+    UniquePtr& operator=(const UniquePtr &) = delete;
+
+    explicit UniquePtr(T* ptr = nullptr) noexcept : ptr_{ptr} {}
+
     T* release() noexcept {
       auto oldPtr = ptr_;
       ptr_ = nullptr;
@@ -17,12 +23,6 @@ class UniquePtr {
       }
       ptr_ = ptr;
     }
-
-  public:
-    UniquePtr(const UniquePtr &) = delete;
-    UniquePtr& operator=(const UniquePtr &) = delete;
-
-    explicit UniquePtr(T* ptr = nullptr) noexcept : ptr_{ptr} {}
 
     UniquePtr& operator=(T* ptr) noexcept {
       reset(ptr);
