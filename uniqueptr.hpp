@@ -26,7 +26,7 @@ class UniquePtr {
 
     UniquePtr& operator=(T* ptr) noexcept {
       reset(ptr);
-      return this;
+      return *this;
     }
     
     template<typename U>
@@ -37,7 +37,7 @@ class UniquePtr {
     template<typename U>
     UniquePtr& operator=(UniquePtr<U> && other) noexcept {
       reset(other.release());
-      return this;
+      return *this;
     }
 
     ~UniquePtr() noexcept {
