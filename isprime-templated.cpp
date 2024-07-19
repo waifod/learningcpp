@@ -1,18 +1,20 @@
 #include <cassert>
 
-template<int p, int q>
-struct IsPrimeHelper {
-  static constexpr bool value{p%q==0 ? false : IsPrimeHelper<p, q-1>::value};
-};
-
-template<int p>
-struct IsPrimeHelper<p, 1> {
-  static constexpr bool value{true};
-};
-
-template<int p>
+template<int n>
 struct IsPrime {
-  static constexpr bool value{IsPrimeHelper<p, p/2>::value};
+  private:
+    template<int m, int k>
+    struct IsPrimeHelper {
+      static constexpr bool value{m % k == 0 ? false : IsPrimeHelper<m, k-1>::value};
+    };
+
+    template<int m>
+    struct IsPrimeHelper<m, 1> {
+      static constexpr bool value{true};
+    };
+
+  public:
+    static constexpr bool value{IsPrimeHelper<n, n/2>::value};
 };
 
 template<>
@@ -35,7 +37,10 @@ int main() {
   static_assert(IsPrime<6>::value == false);
   static_assert(IsPrime<7>::value == true);
   static_assert(IsPrime<8>::value == false);
+  static_assert(IsPrime<9>::value == false);
   static_assert(IsPrime<99>::value == false);
-
-  return EXIT_SUCCESS;
+  static_assert(IsPrime<999>::value == false);
+  // We can't call IsPrime<9999>::value because there's
+  // a maximum recursion depth for template instantiation.
+  //static_assert(IsPrime<9999>::value == false);
 }

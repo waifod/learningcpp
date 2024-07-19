@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-constexpr int ITERATIONS{10000000};
+constexpr size_t ITERATIONS{100000000};
 
 // Static values are initialized thread-safely on the first call.
 // This means that whenever you call them you first check whether
@@ -26,24 +26,22 @@ class String {
 };
 
 int main() {
-  auto start = std::chrono::steady_clock::now();
+  auto start{std::chrono::steady_clock::now()};
   for (size_t i{0}; i<ITERATIONS; ++i) {
     (void)String::staticGetString();
   }
-  auto end = std::chrono::steady_clock::now();
+  auto end{std::chrono::steady_clock::now()};
   std::cout << "It took "
-    << std::chrono::duration<double, std::milli>(end-start).count()
-    << "ms to execute the static version.\n";
+            << std::chrono::duration<double, std::milli>(end-start).count()
+            << "ms to execute the static version.\n";
   
-  auto obj = String();
+  auto obj{String()};
   start = std::chrono::steady_clock::now();
   for (size_t i{0}; i<ITERATIONS; ++i) {
     (void)obj.getString();
   }
   end = std::chrono::steady_clock::now();
   std::cout << "It took "
-    << std::chrono::duration<double, std::milli>(end-start).count()
-    << "ms to execute the non-static version.\n";
-
-  return EXIT_SUCCESS;
+            << std::chrono::duration<double, std::milli>(end-start).count()
+            << "ms to execute the non-static version.\n";
 }

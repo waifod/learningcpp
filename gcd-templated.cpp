@@ -16,6 +16,4 @@ int main() {
   static_assert(GCD<0, 4>::value == 4);
   static_assert(GCD<3, 0>::value == 3);
   static_assert(GCD<6, 4>::value == 2);
-
-  return EXIT_SUCCESS;
 }
