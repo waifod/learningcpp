@@ -31,19 +31,19 @@ struct Wrapper {
 };
 
 void foo(Wrapper w) {
-  std::cout << "foo called by value for wrapper " << w.getVal() << ".\n";
+  std::cout << "foo called for wrapper " << w.getVal() << ".\n\n";
 }
 
 void bar(const Wrapper& w) {
-  std::cout << "bar called by const& for wrapper " << w.getVal() << ".\n";
+  std::cout << "bar called by const& for wrapper " << w.getVal() << ".\n\n";
 }
 
 void bar(Wrapper&& w) {
-  std::cout << "bar called by && for wrapper " << w.getVal() << ".\n";
+  std::cout << "bar called by && for wrapper " << w.getVal() << ".\n\n";
 }
 
 void goo(const Wrapper& w) {
-    std::cout << "goo called by const& for wrapper " << w.getVal() << ".\n";
+    std::cout << "goo called for wrapper " << w.getVal() << ".\n\n";
 }
 
 int main() {
