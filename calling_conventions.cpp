@@ -42,8 +42,8 @@ void bar(Wrapper&& w) {
   std::cout << "bar called by && for wrapper " << w.getVal() << ".\n\n";
 }
 
-void goo(const Wrapper& w) {
-    std::cout << "goo called for wrapper " << w.getVal() << ".\n\n";
+void baz(const Wrapper& w) {
+    std::cout << "baz called for wrapper " << w.getVal() << ".\n\n";
 }
 
 int main() {
@@ -55,36 +55,34 @@ int main() {
             << "\nTesting constructors.\n\n";
   Wrapper w0 {0};
   Wrapper w1 {1};
-  auto w3 {w0};
-  auto w4 {std::move(w1)};
-  auto w5 {Wrapper(2)};
+  [[maybe_unused]] auto w3 {w0};
+  [[maybe_unused]] auto w4 {std::move(w1)};
+  [[maybe_unused]] auto w5 {Wrapper{2}};
 
   std::cout << "\n========================================"
             << "\nTesting assignments.\n\n";
   w0 = w0;
   w0 = std::move(w1);
-  w0 = Wrapper(2);
+  w0 = Wrapper{2};
 
   std::cout << "\n========================================"
             << "\nTesting calling conventions for foo."
             << "\nfoo has signature void(Wrapper).\n\n";
   foo(w0);
   foo(std::move(w1));
-  foo(Wrapper(2));
+  foo(Wrapper{2});
 
-  std::cout << "\n========================================"
+  std::cout << "========================================"
             << "\nTesting calling conventions for bar."
             << "\nbar has signatures void(const Wrapper&) and void(Wrapper&&).\n\n";
   bar(w0);
   bar(std::move(w1));
-  bar(Wrapper(2));
+  bar(Wrapper{2});
 
-  std::cout << "\n========================================"
-            << "\nTesting calling conventions for goo."
-            << "\ngoo has signature void(const Wrapper&).\n\n";
-  goo(w0);
-  goo(std::move(w1));
-  goo(Wrapper(2));
-
-  std::cout << std::endl;
+  std::cout << "========================================"
+            << "\nTesting calling conventions for baz."
+            << "\nbaz has signature void(const Wrapper&).\n\n";
+  baz(w0);
+  baz(std::move(w1));
+  baz(Wrapper{2});
 }
