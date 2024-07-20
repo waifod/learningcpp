@@ -3,11 +3,11 @@
 template<typename T>
 class UniquePtr {
   private:
-    T* ptr_;
+    T* ptr_{nullptr};
 
   public:
-    UniquePtr(const UniquePtr&) noexcept = delete;
-    UniquePtr& operator=(const UniquePtr&) noexcept = delete;
+    constexpr UniquePtr(const UniquePtr&) noexcept = delete;
+    constexpr UniquePtr& operator=(const UniquePtr&) noexcept = delete;
 
     constexpr T* release() noexcept {
       auto tmp = ptr_;
@@ -66,6 +66,6 @@ class UniquePtr {
 };
 
 template<typename T, typename ... Args>
-UniquePtr& make_unique(Args&& ... args) {
+UniquePtr<T>& make_unique(Args&& ... args) {
   return UniquePtr<T>(new T(std::forward<Args>(args)...));
 }
