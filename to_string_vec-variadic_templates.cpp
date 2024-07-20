@@ -30,7 +30,7 @@ std::vector<std::string> initlist_to_string_vec(const Ts& ... ts) {
 
 template <typename ... Ts>
 std::vector<std::string> lambda_to_string_vec(const Ts& ... ts) {
-  const auto to_string = [](const auto& t) {
+  constexpr auto to_string = [](const auto& t) -> std::string {
     std::stringstream ss;
     ss << t;
     return ss.str();
