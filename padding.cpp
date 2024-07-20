@@ -1,4 +1,7 @@
+#include <cxxabi.h>
 #include <iostream>
+#include <stdexcept>
+#include <typeinfo>
 
 /* The expected sizes in these comments assume a 64-bit machine */
 
@@ -80,31 +83,43 @@ struct foo12 {
   char c;
 };
 
-template<typename T>
-void printSize(std::string structName) {
-  std::cout << "sizeof(" << structName << ") = " << sizeof(T) << "\n";
+std::string demangle(const char *mangledName) {
+  int status;
+  char *demangledName{abi::__cxa_demangle(mangledName, nullptr, 0, &status)};
+  if (status == 0) {
+    std::string retval{demangledName};
+    free(demangledName);
+    return retval;
+  } else {
+    throw std::runtime_error("Error demangling");
+  }
+}
+
+template <typename T> void printSize() {
+  std::cout << "sizeof(" << demangle(typeid(T).name()) << ")\t= " << sizeof(T)
+            << "\n";
 }
 
 int main() {
-  printSize<char>("char");
-  printSize<char*>("char*");
-  printSize<short>("short");
-  printSize<int>("int");
-  printSize<long>("long");
-  printSize<float>("float");
-  printSize<double>("double");
-  printSize<foo1>("struct foo1");
-  printSize<foo2>("struct foo2");
-  printSize<foo3>("struct foo3");
-  printSize<foo4>("struct foo4");
-  printSize<foo5>("struct foo5");
-  printSize<foo6>("struct foo6");
-  printSize<foo7>("struct foo7");
-  printSize<foo8>("struct foo8");
-  printSize<foo9>("struct foo9");
-  printSize<foo10>("struct foo10");
-  printSize<foo11>("struct foo11");
-  printSize<foo12>("struct foo12");
+  printSize<char>();
+  printSize<char *>();
+  printSize<short>();
+  printSize<int>();
+  printSize<long>();
+  printSize<float>();
+  printSize<double>();
+  printSize<foo1>();
+  printSize<foo2>();
+  printSize<foo3>();
+  printSize<foo4>();
+  printSize<foo5>();
+  printSize<foo6>();
+  printSize<foo7>();
+  printSize<foo8>();
+  printSize<foo9>();
+  printSize<foo10>();
+  printSize<foo11>();
+  printSize<foo12>();
 
   if (sizeof(struct foo3) == 16) {
     std::cout << "This looks like a 64-bit machine.\n";
