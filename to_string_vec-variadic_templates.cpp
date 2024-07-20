@@ -39,22 +39,22 @@ std::vector<std::string> lambda_to_string_vec(const Ts& ... ts) {
   return {to_string(ts)...};
 }
 
+void print_string_vec(const std::vector<std::string>& vec) {
+  for (const auto& s : vec) {
+    std::cout << s << '\n';
+  }
+}
+
 int main() {
   std::cout << "Calling the recursive version.\n";
   auto vec {recursive_to_string_vec("hello", 1, 2.0, 4.3f, "bob")};
-  for (const auto& s : vec) {
-    std::cout << s << '\n';
-  }
-  
+  print_string_vec(vec);  
+
   std::cout << "\nCalling the initializer_list version.\n";
   vec = initlist_to_string_vec("hello", 1, 2.0, 4.3f, "bob");
-  for (const auto& s : vec) {
-    std::cout << s << '\n';
-  }
+  print_string_vec(vec);  
 
   std::cout << "\nCalling the lambda version.\n";
   vec = lambda_to_string_vec("hello", 1, 2.0, 4.3f, "bob");
-  for (const auto& s : vec) {
-    std::cout << s << '\n';
-  }
+  print_string_vec(vec);  
 }

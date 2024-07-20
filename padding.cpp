@@ -83,43 +83,44 @@ struct foo12 {
   char c;
 };
 
-std::string demangle(const char *mangledName) {
+std::string demangle(const char *mangled_name) {
   int status;
-  char *demangledName{abi::__cxa_demangle(mangledName, nullptr, 0, &status)};
+  char *demangled_name{abi::__cxa_demangle(mangled_name, nullptr, 0, &status)};
   if (status == 0) {
-    std::string retval{demangledName};
-    free(demangledName);
+    std::string retval{demangled_name};
+    free(demangled_name);
     return retval;
   } else {
     throw std::runtime_error("Error demangling");
   }
 }
 
-template <typename T> void printSize() {
-  std::cout << "sizeof(" << demangle(typeid(T).name()) << ")\t= " << sizeof(T)
+template <typename T> void print_size() {
+  std::cout << "sizeof(" << demangle(typeid(T).name()) << ") = " << sizeof(T)
             << "\n";
 }
 
 int main() {
-  printSize<char>();
-  printSize<char *>();
-  printSize<short>();
-  printSize<int>();
-  printSize<long>();
-  printSize<float>();
-  printSize<double>();
-  printSize<foo1>();
-  printSize<foo2>();
-  printSize<foo3>();
-  printSize<foo4>();
-  printSize<foo5>();
-  printSize<foo6>();
-  printSize<foo7>();
-  printSize<foo8>();
-  printSize<foo9>();
-  printSize<foo10>();
-  printSize<foo11>();
-  printSize<foo12>();
+  print_size<char>();
+  print_size<char[3]>();
+  print_size<char *>();
+  print_size<short>();
+  print_size<int>();
+  print_size<long>();
+  print_size<float>();
+  print_size<double>();
+  print_size<foo1>();
+  print_size<foo2>();
+  print_size<foo3>();
+  print_size<foo4>();
+  print_size<foo5>();
+  print_size<foo6>();
+  print_size<foo7>();
+  print_size<foo8>();
+  print_size<foo9>();
+  print_size<foo10>();
+  print_size<foo11>();
+  print_size<foo12>();
 
   if (sizeof(struct foo3) == 16) {
     std::cout << "This looks like a 64-bit machine.\n";
