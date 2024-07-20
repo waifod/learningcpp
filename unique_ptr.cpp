@@ -56,8 +56,7 @@ class UniquePtr {
       return *get();
     }
 
-    template<typename U>
-    void swap(UniquePtr<U>& other) noexcept {
+    void swap(UniquePtr& other) noexcept {
       std::swap(ptr_, other.ptr_);
     }
 
