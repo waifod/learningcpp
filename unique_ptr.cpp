@@ -29,7 +29,7 @@ class UniquePtr {
     }
     
     ~UniquePtr() noexcept {
-      reset();
+      delete ptr_;
     }
 
     [[nodiscard]] constexpr UniquePtr& operator=(T* ptr) noexcept {
