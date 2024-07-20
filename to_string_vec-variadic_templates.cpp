@@ -35,7 +35,6 @@ std::vector<std::string> lambda_to_string_vec(const Ts& ... ts) {
     ss << t;
     return ss.str();
   };
-
   return {to_string(ts)...};
 }
 
