@@ -3,23 +3,6 @@
 
 template<typename T>
 class SharedPtr {
-  private:
-    T* ptr_{nullptr};
-    std::atomic<int>* counter_{nullptr};
-
-    void increment() {
-      if (counter_) [[likely]] {
-        ++(*counter_);
-      }
-    }
-
-    void decrement() {
-      if (counter_ && --(*counter_) == 0) {
-        delete ptr_;
-        delete counter_;
-      }
-    }
-
   public:
     explicit SharedPtr() noexcept = default;
 
@@ -75,6 +58,23 @@ class SharedPtr {
     }
 
     explicit operator bool() const noexcept { return static_cast<bool>(ptr_); }
+    
+  private:
+    T* ptr_{nullptr};
+    std::atomic<int>* counter_{nullptr};
+
+    void increment() {
+      if (counter_) [[likely]] {
+        ++(*counter_);
+      }
+    }
+
+    void decrement() {
+      if (counter_ && --(*counter_) == 0) {
+        delete ptr_;
+        delete counter_;
+      }
+    }
 };
 
 template<typename T, typename ... Args>
