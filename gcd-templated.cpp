@@ -1,11 +1,11 @@
 #include <cstdlib>
 
-template<int m, int n>
+template <int m, int n>
 struct GCD {
-  static constexpr int value{GCD<n, m%n>::value};
+  static constexpr int value{GCD<n, m % n>::value};
 };
 
-template<int m>
+template <int m>
 struct GCD<m, 0> {
   static constexpr int value{m};
 };

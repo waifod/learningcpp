@@ -1,4 +1,5 @@
 #include <cxxabi.h>
+
 #include <iostream>
 #include <stdexcept>
 #include <typeinfo>
@@ -95,7 +96,8 @@ std::string demangle(const char *mangled_name) {
   }
 }
 
-template <typename T> void print_size() {
+template <typename T>
+void print_size() {
   std::cout << "sizeof(" << demangle(typeid(T).name()) << ") = " << sizeof(T)
             << "\n";
 }

@@ -1,33 +1,37 @@
 #include <iostream>
 
 struct Wrapper {
-  public:
-    explicit Wrapper(int val) : val_{val} {
-      std::cout << "Wrapper " << val_ << " constructed from int.\n";
-    }
-    
-    Wrapper(const Wrapper& other) : val_{other.val_} {
-      std::cout << "Wrapper constructed from " << val_ << " with copy constructor.\n";
-    }
+ public:
+  explicit Wrapper(int val) : val_{val} {
+    std::cout << "Wrapper " << val_ << " constructed from int.\n";
+  }
 
-    Wrapper(Wrapper&& other) : val_{other.val_} {
-      std::cout << "Wrapper constructed from " << val_ << " with move constructor.\n";
-    }
-    
-    Wrapper& operator=(Wrapper&& other) {
-      std::cout << "Wrapper " << val_ << " assigned from " << other.val_ << " with move assignment.\n";
-      return *this;
-    }
-    
-    Wrapper& operator=(const Wrapper& other) {
-      std::cout << "Wrapper " << val_ << " assigned from " << other.val_ << " with copy assignment.\n";
-      return *this;
-    }
-    
-    int getVal() const { return val_; }
-    
-  private:
-    int val_;
+  Wrapper(const Wrapper& other) : val_{other.val_} {
+    std::cout << "Wrapper constructed from " << val_
+              << " with copy constructor.\n";
+  }
+
+  Wrapper(Wrapper&& other) : val_{other.val_} {
+    std::cout << "Wrapper constructed from " << val_
+              << " with move constructor.\n";
+  }
+
+  Wrapper& operator=(Wrapper&& other) {
+    std::cout << "Wrapper " << val_ << " assigned from " << other.val_
+              << " with move assignment.\n";
+    return *this;
+  }
+
+  Wrapper& operator=(const Wrapper& other) {
+    std::cout << "Wrapper " << val_ << " assigned from " << other.val_
+              << " with copy assignment.\n";
+    return *this;
+  }
+
+  int getVal() const { return val_; }
+
+ private:
+  int val_;
 };
 
 void foo(Wrapper w) {
@@ -43,7 +47,7 @@ void bar(Wrapper&& w) {
 }
 
 void baz(const Wrapper& w) {
-    std::cout << "baz called for wrapper " << w.getVal() << ".\n\n";
+  std::cout << "baz called for wrapper " << w.getVal() << ".\n\n";
 }
 
 int main() {
@@ -53,11 +57,11 @@ int main() {
 
   std::cout << "\n========================================"
             << "\nTesting constructors.\n\n";
-  Wrapper w0 {0};
-  Wrapper w1 {1};
-  [[maybe_unused]] auto w3 {w0};
-  [[maybe_unused]] auto w4 {std::move(w1)};
-  [[maybe_unused]] auto w5 {Wrapper{2}};
+  Wrapper w0{0};
+  Wrapper w1{1};
+  [[maybe_unused]] auto w3{w0};
+  [[maybe_unused]] auto w4{std::move(w1)};
+  [[maybe_unused]] auto w5{Wrapper{2}};
 
   std::cout << "\n========================================"
             << "\nTesting assignments.\n\n";
@@ -72,9 +76,10 @@ int main() {
   foo(std::move(w1));
   foo(Wrapper{2});
 
-  std::cout << "========================================"
-            << "\nTesting calling conventions for bar."
-            << "\nbar has signatures void(const Wrapper&) and void(Wrapper&&).\n\n";
+  std::cout
+      << "========================================"
+      << "\nTesting calling conventions for bar."
+      << "\nbar has signatures void(const Wrapper&) and void(Wrapper&&).\n\n";
   bar(w0);
   bar(std::move(w1));
   bar(Wrapper{2});
