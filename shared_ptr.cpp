@@ -1,5 +1,5 @@
+#include <algorithm>
 #include <atomic>
-#include <iostream>
 
 template<typename T>
 class SharedPtr {
