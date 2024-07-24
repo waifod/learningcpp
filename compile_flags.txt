@@ -1,3 +1,4 @@
--std=c++17
+-std=c++20
+-Wc++20-compat-pedantic
 -Wall
--Wc++17-compat-pedantic
+-Wextra
