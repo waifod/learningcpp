@@ -37,6 +37,7 @@
 ## Other websites
 * [C++ reference](https://en.cppreference.com/)
 * [Compiler Explorer](https://godbolt.org/)
+* [Cpp-learning-resources](https://github.com/RedSkittleFox/Cpp-Learning-Resources/)
 * [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
 * [Learn C++](https://www.learncpp.com/)
 * [Quick C++ Benchmark](https://quick-bench.com/)
