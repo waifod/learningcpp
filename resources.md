@@ -29,7 +29,9 @@
 * [A Tour of C++ - Reading Notes (part 1/2)](https://ianyepan.github.io/posts/cpp-notes-pt1/)
 * [A Tour of C++ - Reading Notes (part 2/2)](https://ianyepan.github.io/posts/cpp-notes-pt2/)
 * [C++ value categories and decltype demystified](https://www.scs.stanford.edu/~dm/blog/decltype.html)
+* [C++23’s Deducing this](https://devblogs.microsoft.com/cppblog/cpp23-deducing-this/)
 * [The Lost Art of Structure Packing](https://www.catb.org/esr/structure-packing/)
+* [Universal References in C++11](https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers)
 
 ## SO questions
 * [What are the differences between a pointer variable and a reference variable?](https://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable)
