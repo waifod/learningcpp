@@ -1,15 +1,16 @@
 #include <cassert>
+#include <cstdint>
 
-template <int n>
+template <std::int32_t n>
 struct IsPrime {
  private:
-  template <int m, int k>
+  template <std::int32_t m, std::int32_t k>
   struct IsPrimeHelper {
     static constexpr bool value{m % k == 0 ? false
                                            : IsPrimeHelper<m, k - 1>::value};
   };
 
-  template <int m>
+  template <std::int32_t m>
   struct IsPrimeHelper<m, 1> {
     static constexpr bool value{true};
   };

@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <atomic>
+#include <cstdint>
 
 template <typename T>
 class SharedPtr {
@@ -7,7 +8,7 @@ class SharedPtr {
   explicit SharedPtr() noexcept = default;
 
   explicit SharedPtr(T* ptr) noexcept
-      : ptr_{ptr}, counter_{new std::atomic<int>(1)} {}
+      : ptr_{ptr}, counter_{new std::atomic<std::int32_t>(1)} {}
 
   SharedPtr(const SharedPtr& other) noexcept
       : ptr_{other.ptr_}, counter_{other.counter_} {
@@ -47,7 +48,7 @@ class SharedPtr {
   T* operator->() const noexcept { return get(); }
   T& operator*() const noexcept { return *get(); }
 
-  int use_count() const noexcept { return counter_ ? counter_->load() : 0; }
+  std::int32_t use_count() const noexcept { return counter_ ? counter_->load() : 0; }
 
   void swap(SharedPtr& other) noexcept {
     std::swap(ptr_, other.ptr_);
@@ -58,7 +59,7 @@ class SharedPtr {
 
  private:
   T* ptr_{nullptr};
-  std::atomic<int>* counter_{nullptr};
+  std::atomic<std::int32_t>* counter_{nullptr};
 
   void increment() {
     if (counter_) [[likely]] {

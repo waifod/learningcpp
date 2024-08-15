@@ -1,8 +1,9 @@
+#include <cstdint>
 #include <iostream>
 
 struct Wrapper {
  public:
-  explicit Wrapper(int val) : val_{val} {
+  explicit Wrapper(std::int32_t val) : val_{val} {
     std::cout << "Wrapper " << val_ << " constructed from int.\n";
   }
 
@@ -59,9 +60,9 @@ int main() {
             << "\nTesting constructors.\n\n";
   Wrapper w0{0};
   Wrapper w1{1};
-  [[maybe_unused]] auto w3{w0};
-  [[maybe_unused]] auto w4{std::move(w1)};
-  [[maybe_unused]] auto w5{Wrapper{2}};
+  [[maybe_unused]] auto w3 = w0;
+  [[maybe_unused]] auto w4 = std::move(w1);
+  [[maybe_unused]] auto w5 = Wrapper{2};
 
   std::cout << "\n========================================"
             << "\nTesting assignments.\n\n";

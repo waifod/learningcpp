@@ -1,11 +1,12 @@
-#include <cstdlib>
+#include <cstdint>
+#include <cassert>
 
-template <int m, int n>
+template <std::int32_t m, std::int32_t n>
 struct GCD {
   static constexpr int value{GCD<n, m % n>::value};
 };
 
-template <int m>
+template <std::int32_t m>
 struct GCD<m, 0> {
   static constexpr int value{m};
 };
