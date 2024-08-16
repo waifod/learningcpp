@@ -49,6 +49,7 @@
 * [C++ Weekly With Jason Turner](https://www.youtube.com/@cppweekly)
 * [Coding Interview Prep](https://www.youtube.com/@CodingInterviewPrep)
 * [CoffeeBeforeArch](https://www.youtube.com/@CoffeeBeforeArch)
+* [CppCon](https://www.youtube.com/@CppCon)
 * [cpponsea](https://www.youtube.com/@cpponsea)
 * [mCoding](https://www.youtube.com/@mCoding)
 * [Meeting Cpp](https://www.youtube.com/@MeetingCPP)
