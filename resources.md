@@ -22,7 +22,14 @@
 * [C++ Design Patterns for Low-latency Applications Including High-frequency Trading](https://arxiv.org/abs/2309.04259)
 
 ## Blogs
+* [C++ Stories](https://www.cppstories.com/)
 * [Daily bit(e) of C++](https://simontoth.substack.com/)
+* [Fluent C++](https://www.fluentcpp.com/)
+* [Modernes C++](https://www.modernescpp.com/)
+* [News, Status & Discussion about Standard C++](https://isocpp.org/)
+* [Random ASCII](https://randomascii.wordpress.com/)
+* [Sutter's Mill](https://herbsutter.com/)
+* [The Old New Thing](https://devblogs.microsoft.com/oldnewthing/)
 * [The Pasture](https://thephd.dev/)
 
 ## Blogposts
@@ -30,6 +37,7 @@
 * [A Tour of C++ - Reading Notes (part 2/2)](https://ianyepan.github.io/posts/cpp-notes-pt2/)
 * [C++ value categories and decltype demystified](https://www.scs.stanford.edu/~dm/blog/decltype.html)
 * [C++23’s Deducing this](https://devblogs.microsoft.com/cppblog/cpp23-deducing-this/)
+* [Ref-qualifiers](https://akrzemi1.wordpress.com/2014/06/02/ref-qualifiers/)
 * [The Lost Art of Structure Packing](https://www.catb.org/esr/structure-packing/)
 * [Universal References in C++11](https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers)
 
@@ -37,20 +45,25 @@
 * [What are the differences between a pointer variable and a reference variable?](https://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable)
 
 ## Other websites
+* [C++ draft](https://eel.is/c++draft/)
+* [C++ Insights](https://cppinsights.io/)
 * [C++ reference](https://en.cppreference.com/)
 * [Compiler Explorer](https://godbolt.org/)
 * [Cpp-learning-resources](https://github.com/RedSkittleFox/Cpp-Learning-Resources/)
 * [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
 * [Learn C++](https://www.learncpp.com/)
 * [Quick C++ Benchmark](https://quick-bench.com/)
+* [WG21 redirect service](https://wg21.link/)
 
 ## YouTube channels
 * [ACCU Conference](https://www.youtube.com/@ACCUConf)
+* [Bisqwit](https://www.youtube.com/@Bisqwit)
 * [C++ Weekly With Jason Turner](https://www.youtube.com/@cppweekly)
 * [Coding Interview Prep](https://www.youtube.com/@CodingInterviewPrep)
 * [CoffeeBeforeArch](https://www.youtube.com/@CoffeeBeforeArch)
 * [CppCon](https://www.youtube.com/@CppCon)
 * [cpponsea](https://www.youtube.com/@cpponsea)
+* [javidx9 - One Lone Coder](https://www.youtube.com/@javidx9)
 * [mCoding](https://www.youtube.com/@mCoding)
 * [Meeting Cpp](https://www.youtube.com/@MeetingCPP)
 * [The Cherno](https://www.youtube.com/@TheCherno)
