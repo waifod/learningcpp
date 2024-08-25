@@ -28,6 +28,7 @@
 * [Modernes C++](https://www.modernescpp.com/)
 * [News, Status & Discussion about Standard C++](https://isocpp.org/)
 * [Random ASCII](https://randomascii.wordpress.com/)
+* [Sandor Dargo's Blog](https://www.sandordargo.com/)
 * [Sutter's Mill](https://herbsutter.com/)
 * [The Old New Thing](https://devblogs.microsoft.com/oldnewthing/)
 * [The Pasture](https://thephd.dev/)
