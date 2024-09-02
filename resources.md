@@ -74,6 +74,9 @@
 * [Designing a Physics Engine in 5 minutes](https://www.youtube.com/watch?v=-_IspRG548E)
 * [Return Value Optimization and Copy Elision](https://www.youtube.com/watch?v=HNYOx-Vh_VA)
 
+## Courses
+* [The Modern C++ Challenger](https://www.udemy.com/course/the-modern-c-challenger/)
+
 ## Tools
 * clang-tidy
 * clang-format
