@@ -23,12 +23,15 @@
 
 ## Blogs
 * [C++ Stories](https://www.cppstories.com/)
+* [C++ Team Blog](https://devblogs.microsoft.com/cppblog/)
 * [Daily bit(e) of C++](https://simontoth.substack.com/)
 * [Fluent C++](https://www.fluentcpp.com/)
+* [Meeting C++ Blog](https://meetingcpp.com/)
 * [Modernes C++](https://www.modernescpp.com/)
 * [News, Status & Discussion about Standard C++](https://isocpp.org/)
 * [Random ASCII](https://randomascii.wordpress.com/)
 * [Sandor Dargo's Blog](https://www.sandordargo.com/)
+* [Simplify C++](https://arne-mertz.de/)
 * [Sutter's Mill](https://herbsutter.com/)
 * [The Old New Thing](https://devblogs.microsoft.com/oldnewthing/)
 * [The Pasture](https://thephd.dev/)
