@@ -47,6 +47,7 @@
 
 ## SO questions
 * [What are the differences between a pointer variable and a reference variable?](https://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable)
+* [What happens to static variables in inline functions?](https://stackoverflow.com/questions/185624/what-happens-to-static-variables-in-inline-functions)
 
 ## Other websites
 * [C++ draft](https://eel.is/c++draft/)
