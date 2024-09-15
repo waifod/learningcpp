@@ -74,6 +74,7 @@
 * [The Cherno](https://www.youtube.com/@TheCherno)
 
 ## YouTube videos
+* [A Kaleidoscope of C++ Lambdas - Dawid Zalewski - C++ on Sea 2024](https://www.youtube.com/watch?v=lQRQJ9NDzhc)
 * [C++ - copy and swap](https://www.youtube.com/watch?v=7LxepUEcXA4)
 * [Designing a Physics Engine in 5 minutes](https://www.youtube.com/watch?v=-_IspRG548E)
 * [Return Value Optimization and Copy Elision](https://www.youtube.com/watch?v=HNYOx-Vh_VA)
