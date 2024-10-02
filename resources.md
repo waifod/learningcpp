@@ -9,6 +9,7 @@
 * [Other websites](#other-websites)
 * [YouTube channels](#youtube-channels)
 * [YouTube videos](#youtube-videos)
+* [Courses](#courses)
 * [Tools](#tools)
 
 ## Books
