@@ -42,6 +42,8 @@
 * [A Tour of C++ - Reading Notes (part 2/2)](https://ianyepan.github.io/posts/cpp-notes-pt2/)
 * [C++ value categories and decltype demystified](https://www.scs.stanford.edu/~dm/blog/decltype.html)
 * [C++23’s Deducing this](https://devblogs.microsoft.com/cppblog/cpp23-deducing-this/)
+* [std::initializer_list in C++ 1/2 - Internals and Use Cases](https://www.cppstories.com/2023/initializer_list_basics/)
+* [std::initializer_list in C++ 2/2 - Internals and Use Cases](https://www.cppstories.com/2023/initializer_list_improvements/)
 * [Ref-qualifiers](https://akrzemi1.wordpress.com/2014/06/02/ref-qualifiers/)
 * [The Lost Art of Structure Packing](https://www.catb.org/esr/structure-packing/)
 * [Universal References in C++11](https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers)
