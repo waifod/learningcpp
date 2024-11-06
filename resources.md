@@ -83,6 +83,7 @@
 * [Return Value Optimization and Copy Elision](https://www.youtube.com/watch?v=HNYOx-Vh_VA)
 
 ## Courses
+* [cplings](https://github.com/rdjondo/cplings)
 * [The Modern C++ Challenger](https://www.udemy.com/course/the-modern-c-challenger/)
 
 ## Tools
